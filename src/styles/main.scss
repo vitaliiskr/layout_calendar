@@ -13,7 +13,7 @@ body {
 
 .calendar {
   display: flex;
-  width: 800px;
+  width: $calendar-width;
   flex-wrap: wrap;
 
   @for $i from 1 through 31 {

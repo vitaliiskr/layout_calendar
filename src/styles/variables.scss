@@ -4,6 +4,7 @@ $calendar-item-width: 100px;
 $calendar-item-height: 100px;
 $calendar-item-margin: 0.5px;
 $days-margin: $calendar-item-width + $calendar-item-margin*2;
+$calendar-width: $days-margin * 7;
 $tue-margin: $days-margin + 0.5;
 $wed-margin: $days-margin * 2 + 0.5;
 $thu-margin: $days-margin * 3 + 0.5;
