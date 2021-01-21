@@ -1,0 +1,12 @@
+$main-font-family: "Arial", sans-serif;
+$main-font-size: 30px;
+$calendar-item-width: 100px;
+$calendar-item-height: 100px;
+$calendar-item-margin: 0.5px;
+$days-margin: $calendar-item-width + $calendar-item-margin*2;
+$tue-margin: $days-margin + 0.5;
+$wed-margin: $days-margin * 2 + 0.5;
+$thu-margin: $days-margin * 3 + 0.5;
+$fri-margin: $days-margin * 4 + 0.5;
+$sat-margin: $days-margin * 5 + 0.5;
+$sun-margin: $days-margin * 6 + 0.5;

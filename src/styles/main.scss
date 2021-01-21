@@ -1,3 +1,74 @@
+@import "variables";
+@import "reset.scss";
+
 body {
-  margin: 0;
+  font-family: $main-font-family;
+  font-size: $main-font-size;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.calendar {
+  display: flex;
+  width: 800px;
+  flex-wrap: wrap;
+
+  @for $i from 1 through 31 {
+    & :nth-child(#{$i}) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: $calendar-item-margin;
+      width: $calendar-item-width;
+      height: $calendar-item-height;
+      background-color: #eee;
+      border: 1px solid;
+    }
+    & :nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
+
+    & :nth-child(#{$i}):hover {
+      position: relative;
+      bottom: 20px;
+      cursor: pointer;
+      background-color: pink;
+    }
+  }
+
+  &-28 :nth-last-child(-n+3) {
+    display: none;
+  }
+
+  &-29 :nth-last-child(-n+2) {
+    display: none;
+  }
+
+  &-30 :nth-last-child(-n+1) {
+    display: none;
+  }
+
+  &-tue :first-child {
+    margin-left: $tue-margin;
+  }
+  &-wed :first-child {
+    margin-left: $wed-margin;
+  }
+  &-thu :first-child {
+    margin-left: $thu-margin;
+  }
+  &-fri :first-child {
+    margin-left: $fri-margin;
+  }
+  &-sat :first-child {
+    margin-left: $sat-margin;
+  }
+  &-sun :first-child {
+    margin-left: $sun-margin;
+  }
+
 }
