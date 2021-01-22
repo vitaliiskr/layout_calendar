@@ -16,27 +16,28 @@ body {
   width: $calendar-width;
   flex-wrap: wrap;
 
-  @for $i from 1 through 31 {
-    & :nth-child(#{$i}) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      margin: $calendar-item-margin;
-      width: $calendar-item-width;
-      height: $calendar-item-height;
-      background-color: #eee;
-      border: 1px solid;
-    }
+    margin: $calendar-item-margin;
+    width: $calendar-item-width;
+    height: $calendar-item-height;
+    background-color: #eee;
+    border: 1px solid;
+  }
+
+  & > div:hover {
+    position: relative;
+    bottom: 20px;
+    cursor: pointer;
+    background-color: pink;
+  }
+
+  @for $i from 1 through 31 {
     & :nth-child(#{$i})::after {
       content: "#{$i}";
-    }
-
-    & :nth-child(#{$i}):hover {
-      position: relative;
-      bottom: 20px;
-      cursor: pointer;
-      background-color: pink;
     }
   }
 
@@ -52,23 +53,10 @@ body {
     display: none;
   }
 
-  &-tue :first-child {
-    margin-left: $tue-margin;
-  }
-  &-wed :first-child {
-    margin-left: $wed-margin;
-  }
-  &-thu :first-child {
-    margin-left: $thu-margin;
-  }
-  &-fri :first-child {
-    margin-left: $fri-margin;
-  }
-  &-sat :first-child {
-    margin-left: $sat-margin;
-  }
-  &-sun :first-child {
-    margin-left: $sun-margin;
+  @each $day, $days-margin in $days {
+    &-#{$day} :first-child {
+      margin-left: $days-margin;
+    }
   }
 
 }
